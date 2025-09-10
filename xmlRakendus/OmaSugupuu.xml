@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--jada-->
+<inimene saasta="1940" elukoht="Sillamäe">
+	<nimi>Valentina</nimi>
+	<perekonnanimi>Ivanova</perekonnanimi>
+	<lapsed>
+		<inimene saasta="1967" elukoht="Tallinn">
+			<nimi>Valerii</nimi>
+			<perekonnanimi>Ivanov</perekonnanimi>
+			<lapsed>
+				<inimene saasta="2008" elukoht="Tallinn">
+					<nimi>Maria</nimi>
+					<perekonnanimi>Ivanova</perekonnanimi>
+				</inimene>
+				<inimene saasta="2002" elukoht="Tallinn">
+					<nimi>Maksim</nimi>
+					<perekonnanimi>Ivanov</perekonnanimi>
+				</inimene>
+				<inimene saasta="2000" elukoht="Tallinn">
+					<nimi>Anton</nimi>
+					<perekonnanimi>Ivanov</perekonnanimi>
+				</inimene>
+			</lapsed>
+		</inimene>
+		<inimene saasta="1975" elukoht="Sillamäe">
+			<nimi>Arina</nimi>
+			<perekonnanimi>Gubal</perekonnanimi>
+			<lapsed>
+				<inimene saasta="1997" elukoht="Sillamäe">
+					<nimi>Daniil</nimi>
+					<perekonnanimi>Gubal</perekonnanimi>
+					<elukoht>Estonia, Sillamäe</elukoht>
+				</inimene>
+				<inimene saasta="2004" elukoht="Sillamäe">
+					<nimi>Mark</nimi>
+					<perekonnanimi>Gubal</perekonnanimi>
+					<elukoht>Estonia, Sillamäe</elukoht>
+				</inimene>
+				<inimene saasta="2008" elukoht="Sillamäe">
+					<nimi>Sofia</nimi>
+					<perekonnanimi>Gubal</perekonnanimi>
+					<elukoht>Estonia, Sillamäe</elukoht>
+				</inimene>
+			</lapsed>
+		</inimene>
+	</lapsed>
+</inimene>
