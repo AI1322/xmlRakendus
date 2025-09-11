@@ -66,7 +66,7 @@
 		<ul>
 			<xsl:for-each select="//inimene">
 				<xsl:variable name="currentElukoht" select="@elukoht"/>
-				<xsl:if test="not(ancestor::inimene[@elukoht = $currentElukoht])">
+				<xsl:if test="not(ancestor::inimene[@elukoht = $currentElukoht])"> 	<!-- hoiab ära elukohtade dubleerimise -->
 					<li>
 						<xsl:value-of select="$currentElukoht"/>:
 						<xsl:value-of select="count(//inimene[@elukoht = $currentElukoht])"/>
