@@ -1,4 +1,5 @@
 Minu sugupuu
 
-<img width="833" height="643" alt="{166703C4-F9CC-46AE-92DA-CF91A313FDCB}" src="https://github.com/user-attachments/assets/5003e79b-3c1d-469d-baca-ccacf3280d89" />
+<img width="766" height="494" alt="{1F8B96BC-74A7-4399-82CB-59EA7DA0B339}" src="https://github.com/user-attachments/assets/5685ba6f-d27d-40c2-b46a-4c43cc191f95" />
+
 
