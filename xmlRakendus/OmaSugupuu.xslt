@@ -3,7 +3,6 @@
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
 >
 	<xsl:output method="xml" indent="yes"/>
-	<xsl:key name="elukohtKey" match="inimene" use="@elukoht"/>
 
 	<xsl:template match="/">
 		<style>
@@ -17,6 +16,7 @@
 				<th>Vanus</th>
 				<th>Laste arv</th>
 				<th>Elukoht</th>
+				<th>Vanem</th>
 			</tr>
 			<xsl:for-each select="//inimene">
 				<xsl:sort select="count(lapsed/inimene/lapsed/inimene)" data-type="number" order="descending"/>
@@ -29,6 +29,7 @@
 						<xsl:attribute name="style">
 							<xsl:if test="$M"> color: red;</xsl:if>
 							<xsl:if test="$laste_arv &gt;= 2"> background-color: yellow; </xsl:if>
+							<xsl:if test="not(parent::lapsed)">background-color: orange;</xsl:if>
 						</xsl:attribute>
 						<xsl:value-of select="$nimi"/>
 					</td>
@@ -47,16 +48,30 @@
 					<td>
 						<xsl:value-of select="$elukoht"/>
 					</td>
+					<td>
+						<xsl:if test="parent::lapsed">
+							<xsl:value-of select="parent::lapsed/parent::inimene/nimi"/>
+						</xsl:if>
+					</td>
 				</tr>
 			</xsl:for-each>
 		</table>
+		<ul>
+			<li>Peamine esivanem on oranžiga esile tõstetud</li>
+			<li>Inimesed kellel on lapsed kollasega esile tõstetud</li>
+			<li>Inimesed, kelle nimes on täht M tõstetud punasega</li>
+		</ul>
+
 		<strong>Elukohtade statistika:</strong>
 		<ul>
-			<xsl:for-each select="//inimene[generate-id() = generate-id(key('elukohtKey', @elukoht)[1])]">
-				<li>
-					<xsl:value-of select="@elukoht"/>:
-					<xsl:value-of select="count(key('elukohtKey', @elukoht))"/>
-				</li>
+			<xsl:for-each select="//inimene">
+				<xsl:variable name="currentElukoht" select="@elukoht"/>
+				<xsl:if test="not(ancestor::inimene[@elukoht = $currentElukoht])">
+					<li>
+						<xsl:value-of select="$currentElukoht"/>:
+						<xsl:value-of select="count(//inimene[@elukoht = $currentElukoht])"/>
+					</li>
+				</xsl:if>
 			</xsl:for-each>
 		</ul>
 	</xsl:template>
